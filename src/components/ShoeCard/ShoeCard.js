@@ -55,19 +55,32 @@ const Link = styled.a`
   color: inherit;
 `;
 
-const Wrapper = styled.article``;
+const Wrapper = styled.article`
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  max-width: 94%;
+  /* flex-wrap: wrap; */
+  gap: 4px;
+  
+`;
 
 const ImageWrapper = styled.div`
-  position: relative;
+  
+  /* position: absolute; */
+  /* background-color: blue; */
 `;
 
 const Image = styled.img`
-/* width: 100%; */
+width: 100%;
+
 
 `;
 
 const Row = styled.div`
   font-size: 1rem;
+ 
+   /* background-color: brown; */
 `;
 
 const Name = styled.h3`
@@ -75,7 +88,9 @@ const Name = styled.h3`
   color: ${COLORS.gray[900]};
 `;
 
-const Price = styled.span``;
+const Price = styled.span`
+   /* background-color: blue; */
+`;
 
 const ColorInfo = styled.p`
   color: ${COLORS.gray[700]};
