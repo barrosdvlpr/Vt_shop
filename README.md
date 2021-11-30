@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Sole&Ankle — Module 4 workshop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this workshop, our goal is to finish building an e-commerce store!
 
-## Available Scripts
+The good news is, most of our work is done already. We just need to write some additional CSS to construct the layout; things are a bit messy right now!
 
-In the project directory, you can run:
+- Access the Figma: https://www.figma.com/file/kAL3AumTUV11y1IqHhltB6/Sole-and-Ankle-%E2%80%94-Mockup
 
-### `npm start`
+This project uses Create React App. To get started, run the following terminal commands:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- `npm install`
+- `npm run start`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You can then visit the app in-browser; it defaults to http://localhost:3000.
 
-### `npm test`
+_Note that we're only focusing on the design._ The links and inputs don't do anything.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> **Want a bigger challenge?**
+>
+> This workshop comes with a lot of starter code — we'll be adding
+> Flex-specific properties, but for the most part, we don't have a
+> ton of code to write. If you'd prefer, you can build the app from
+> scratch, to practice all the CSS we've learned so far!
+>
+> If you go that route, you can find the sneaker assets you need in
+> `/public/assets`, and their metadata in `/src/data.js`. Design
+> tokens can be found in `/src/constants`. The custom font is
+> Raleway, from Google Fonts.
 
-### `npm run build`
+## Exercise 1: Superheader
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Let's build the “Superheader” a thin grey strip that runs along the top of the page:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Close-up screenshot of the superheader](./docs/exercise-1-solution.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Use Flexbox to correctly align the elements within `src/components/SuperHeader`.
 
-### `npm run eject`
+## Exercise 2: Header
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Continuing on down, let's tackle the main header:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Close-up screenshot of the header and superheader](./docs/exercise-2-solution.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Exercise 3: Shell
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Next up, we want to tackle the "framing" around the shoe grid — the sidebar and title/filter.
 
-## Learn More
+![Screenshot of the store, with everything except the sneaker grid](./docs/exercise-3-solution.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+_NOTE:_ To make life a bit easier, you may wish to comment out the `<ShoeGrid>` component. We'll work on integrating it in the next exercise.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Exercise 4: Shoe Grid
 
-### Code Splitting
+This exercise features two mini-challenges. The second one is a chance to revisit some of the lessons learned in previous modules, and isn't as specific to Flexbox.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 4A: Grid layout
 
-### Analyzing the Bundle Size
+Time to tackle the main feature of this application, the shoes!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Here's a screenshot of the final result:
 
-### Making a Progressive Web App
+![Screenshot of the store, with sneaker grid](./docs/exercise-4a-solution.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This is a tricky problem to solve with Flexbox—CSS Grid is a better tool for this job! Nevertheless, it can be done using Flexbox, with one caveat: the last row may be oversized:
 
-### Advanced Configuration
+![Screenshot of the shoe grid with one enormous sneaker, spanning 4 typical columns](./docs/giant-sneaker.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+In a future module, we'll revisit this and see how CSS Grid can help us out :)
 
-### Deployment
+## 4B: Final touches
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Our sneaker store is in pretty good shape, but there's a couple small bits of polish missing: the "New Release" / "Sale" flag, and the sale price detail.
 
-### `npm run build` fails to minify
+_NOTE:_ This exercise has minimal flexbox implications, and is mainly about revisiting lessons learned in the previous modules (including positioned layout and styled-components). Feel free to skip it if you'd prefer!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Screenshot of the store, with the final details added](./docs/exercise-4b-solution.png)
+
+## To be continued!
+
+Our sneaker store can flex to support different screen sizes, but there isn't a proper mobile or tablet view. Don't fret — we will revisit this workshop in a future module!
+
+In the meantime, take a moment to congratulate yourself for making it through the Flexbox module!!
