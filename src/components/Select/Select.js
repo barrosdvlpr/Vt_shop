@@ -14,6 +14,7 @@ const Select = ({ label, value, children, ...delegated }) => {
 
   return (
     <Wrapper>
+      
       <VisibleLabel>{label}</VisibleLabel>
 
       <SelectWrapper>
@@ -32,7 +33,13 @@ const Select = ({ label, value, children, ...delegated }) => {
   );
 };
 
-const Wrapper = styled.label``;
+const Wrapper = styled.label`
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  
+`;
 
 const VisibleLabel = styled.span`
   color: ${COLORS.gray[700]};
@@ -41,6 +48,7 @@ const VisibleLabel = styled.span`
 
 const SelectWrapper = styled.div`
   position: relative;
+  
 `;
 
 const NativeSelect = styled.select`
@@ -53,6 +61,7 @@ const NativeSelect = styled.select`
   width: 100%;
   height: 100%;
   cursor: pointer;
+  
 `;
 
 const DisplayedBit = styled.span`
