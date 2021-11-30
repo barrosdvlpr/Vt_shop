@@ -62,7 +62,7 @@ const ImageWrapper = styled.div`
 `;
 
 const Image = styled.img`
-width: 100%;
+/* width: 100%; */
 
 `;
 
