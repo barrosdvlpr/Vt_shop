@@ -67,6 +67,9 @@ const Header = styled.header`
 `;
 
 const Title = styled.h2`
+  position: absolute;
+  left: 30%;
+  top: 10px;
   font-size: 1.5rem;
   font-weight: ${WEIGHTS.medium};
 `;
