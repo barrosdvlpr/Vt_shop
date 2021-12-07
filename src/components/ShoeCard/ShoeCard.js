@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-
 import { WEIGHTS } from '../../constants';
 import { formatPrice, pluralize, isNewShoe } from '../../utils';
 import Spacer from '../Spacer';
-
 const ShoeCard = ({
   slug,
   name,
@@ -35,11 +33,11 @@ const ShoeCard = ({
       <Wrapper>
         <ImageWrapper>
           <Image alt="" src={imageSrc} />
-          {variant === 'on-sale' && <SaleFlag>Sale</SaleFlag>}
-          {variant === 'new-release' && (
-            <NewFlag>Just released!</NewFlag>
-          )}
         </ImageWrapper>
+        {variant === 'on-sale' && <SaleFlag>Sale</SaleFlag>}
+        {variant === 'new-release' && (
+          <NewFlag>Just released!</NewFlag>
+        )}
         <Spacer size={12} />
         <Row>
           <Name>{name}</Name>
@@ -70,39 +68,56 @@ const Link = styled.a`
   text-decoration: none;
   color: inherit;
 `;
-const Wrapper = styled.article``;
-const ImageWrapper = styled.div`
+
+
+const Wrapper = styled.article`
   position: relative;
 `;
-const Image = styled.img`
-  width: 100%;
+
+const ImageWrapper = styled.div`
   border-radius: 16px 16px 4px 4px;
+  /*
+    Image zooms in on hover/focus,
+    truncate the spillover
+  */
+  overflow: hidden;
 `;
+
+const Image = styled.img`
+  display: block;
+  width: 100%;
+  transform-origin: 50% 75%;
+  transition: transform 600ms;
+  will-change: transform;
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    ${Link}:hover &,
+    ${Link}:focus & {
+      transform: scale(1.1);
+      transition: transform 200ms;
+    }
+  }
+`;
+
 const Row = styled.div`
   font-size: 1rem;
   display: flex;
   justify-content: space-between;
 `;
-
 const Name = styled.h3`
   font-weight: ${WEIGHTS.medium};
   color: var(--color-gray-900);
 `;
-
 const Price = styled.span`
   color: var(--color);
   text-decoration: var(--text-decoration);
 `;
-
 const ColorInfo = styled.p`
   color: var(--color-gray-700);
 `;
-
 const SalePrice = styled.span`
   font-weight: ${WEIGHTS.medium};
   color: var(--color-primary);
 `;
-
 const Flag = styled.div`
   position: absolute;
   top: 12px;
@@ -116,12 +131,10 @@ const Flag = styled.div`
   color: var(--color-white);
   border-radius: 2px;
 `;
-
 const SaleFlag = styled(Flag)`
   background-color: var(--color-primary);
 `;
 const NewFlag = styled(Flag)`
   background-color: var(--color-secondary);
 `;
-
-export default ShoeCard
+export default ShoeCard;
