@@ -5,13 +5,16 @@ import {
   Menu,
   ShoppingBag,
   ChevronDown,
+  
 } from 'react-feather';
 
 const icons = {
   search: Search,
   menu: Menu,
+  close: Menu,
   'shopping-bag': ShoppingBag,
   'chevron-down': ChevronDown,
+
 };
 
 const Icon = ({ id, color, size, strokeWidth, ...delegated }) => {
